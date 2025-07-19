@@ -1,0 +1,639 @@
+2025-07-19 17:12:18 - root - INFO - \U0001f680 Starting data ingestion...
+2025-07-19 17:12:18 - root - INFO - Starting the data ingestion process.
+2025-07-19 17:12:18 - root - INFO - Reading dataset from path: data/raw\HateSpeechDataset.csv
+2025-07-19 17:12:21 - root - INFO - Dataset successfully loaded. Shape: (440906, 3)
+2025-07-19 17:12:21 - root - INFO - Dropping 'Content_int' column.
+2025-07-19 17:12:21 - root - INFO - 'Content_int' column dropped successfully.
+2025-07-19 17:12:21 - root - INFO - Removing rows where 'Label' is not a valid class (0 or 1).
+2025-07-19 17:12:21 - root - INFO - Converting 'Label' column data type to integer.
+2025-07-19 17:12:21 - root - INFO - Conversion successful. Unique labels: [1 0]
+2025-07-19 17:12:21 - root - INFO - Splitting the dataset into train and test sets.
+2025-07-19 17:12:21 - root - INFO - Train set shape: (352719, 2), Test set shape: (88180, 2)
+2025-07-19 17:12:21 - root - INFO - Saving train set to: Artifacts\data_ingestion\ingested\train.csv
+2025-07-19 17:12:24 - root - INFO - Saving test set to: Artifacts\data_ingestion\ingested\test.csv
+2025-07-19 17:12:24 - root - INFO - Data ingestion process completed successfully.
+2025-07-19 17:12:24 - root - INFO - \u2705 Data ingestion completed.
+2025-07-19 17:12:24 - root - INFO - \U0001f4c4 Train data path: Artifacts\data_ingestion\ingested\train.csv
+2025-07-19 17:12:24 - root - INFO - \U0001f4c4 Test data path: Artifacts\data_ingestion\ingested\test.csv
+2025-07-19 17:12:24 - root - INFO - \U0001f504 Starting data transformation...
+2025-07-19 17:12:24 - root - INFO - initiating the data transforamtion
+2025-07-19 17:12:24 - root - INFO - reading the train and test data from Artifacts\data_ingestion\ingested\train.csv and Artifacts\data_ingestion\ingested\test.csv
+2025-07-19 17:12:26 - root - INFO - Sucessfully read the train and test data
+2025-07-19 17:12:26 - root - INFO - applying lower() to train and test data
+2025-07-19 17:12:27 - root - INFO - Sucessfully lower the train and test data
+2025-07-19 17:12:48 - root - INFO - Sucessfuly remove html tags from train and test data
+2025-07-19 17:12:50 - root - INFO - Sucessfully removed special charachters from train and test data
+2025-07-19 17:12:50 - root - INFO - Tokenizing the train and test data
+2025-07-19 17:14:15 - root - INFO - Sucessfully tokenized train and test data
+2025-07-19 17:14:15 - root - INFO - Removing stopwords from train and test data
+2025-07-19 17:15:09 - root - INFO - \u2705 Data transformation completed.
+2025-07-19 17:15:09 - root - INFO - \U0001f4dd Transformed train path: Artifacts\data_transformation\transformed\transformed_train.csv
+2025-07-19 17:15:09 - root - INFO - \U0001f4dd Transformed test path: Artifacts\data_transformation\transformed\transformed_test.csv
+2025-07-19 17:15:09 - root - INFO - \U0001f521 Starting vectorization (Word2Vec)...
+2025-07-19 17:15:09 - root - INFO - Reading transformed training and testing datasets...
+2025-07-19 17:15:10 - root - INFO - Tokenizing sentences...
+2025-07-19 17:16:07 - root - INFO - Training Word2Vec model...
+2025-07-19 17:16:07 - gensim.models.word2vec - INFO - collecting all words and their counts
+2025-07-19 17:16:07 - gensim.models.word2vec - INFO - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2025-07-19 17:16:07 - gensim.models.word2vec - INFO - PROGRESS: at sentence #10000, processed 210444 words, keeping 21313 word types
+2025-07-19 17:16:07 - gensim.models.word2vec - INFO - PROGRESS: at sentence #20000, processed 425091 words, keeping 30289 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #30000, processed 639095 words, keeping 36743 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #40000, processed 850740 words, keeping 42204 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #50000, processed 1061527 words, keeping 46843 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #60000, processed 1274637 words, keeping 50974 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #70000, processed 1481473 words, keeping 54623 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #80000, processed 1695240 words, keeping 58088 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #90000, processed 1905772 words, keeping 61217 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #100000, processed 2119333 words, keeping 64115 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #110000, processed 2334064 words, keeping 66929 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #120000, processed 2546046 words, keeping 69541 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #130000, processed 2751348 words, keeping 72035 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #140000, processed 2961445 words, keeping 74459 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #150000, processed 3175398 words, keeping 76866 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #160000, processed 3385386 words, keeping 79128 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #170000, processed 3596260 words, keeping 81174 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #180000, processed 3809144 words, keeping 83173 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #190000, processed 4020332 words, keeping 85176 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #200000, processed 4232671 words, keeping 87215 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #210000, processed 4443689 words, keeping 89075 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #220000, processed 4652052 words, keeping 90813 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #230000, processed 4862817 words, keeping 92603 word types
+2025-07-19 17:16:08 - gensim.models.word2vec - INFO - PROGRESS: at sentence #240000, processed 5075570 words, keeping 94493 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #250000, processed 5285374 words, keeping 96047 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #260000, processed 5497540 words, keeping 97719 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #270000, processed 5703774 words, keeping 99243 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #280000, processed 5913386 words, keeping 100819 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #290000, processed 6125250 words, keeping 102499 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #300000, processed 6338625 words, keeping 103935 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #310000, processed 6551511 words, keeping 105276 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #320000, processed 6760383 words, keeping 106681 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #330000, processed 6967104 words, keeping 107976 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #340000, processed 7181249 words, keeping 109398 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - PROGRESS: at sentence #350000, processed 7391578 words, keeping 110785 word types
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - collected 111104 word types from a corpus of 7446999 raw words and 352719 sentences
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - Creating a fresh vocabulary
+2025-07-19 17:16:09 - gensim.utils - INFO - Word2Vec lifecycle event {'msg': 'effective_min_count=5 retains 38908 unique words (35.02% of original 111104, drops 72196)', 'datetime': '2025-07-19T17:16:09.589743', 'gensim': '4.3.2', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26100-SP0', 'event': 'prepare_vocab'}
+2025-07-19 17:16:09 - gensim.utils - INFO - Word2Vec lifecycle event {'msg': 'effective_min_count=5 leaves 7329032 word corpus (98.42% of original 7446999, drops 117967)', 'datetime': '2025-07-19T17:16:09.637188', 'gensim': '4.3.2', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26100-SP0', 'event': 'prepare_vocab'}
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - deleting the raw counts dictionary of 111104 items
+2025-07-19 17:16:09 - gensim.models.word2vec - INFO - sample=0.001 downsamples 25 most-common words
+2025-07-19 17:16:09 - gensim.utils - INFO - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 7019953.204649959 word corpus (95.8%% of prior 7329032)', 'datetime': '2025-07-19T17:16:09.812668', 'gensim': '4.3.2', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26100-SP0', 'event': 'prepare_vocab'}
+2025-07-19 17:16:10 - gensim.models.word2vec - INFO - estimated required memory for 38908 words and 100 dimensions: 50580400 bytes
+2025-07-19 17:16:10 - gensim.models.word2vec - INFO - resetting layer weights
+2025-07-19 17:16:10 - gensim.utils - INFO - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2025-07-19T17:16:10.137025', 'gensim': '4.3.2', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26100-SP0', 'event': 'build_vocab'}
+2025-07-19 17:16:10 - gensim.utils - INFO - Word2Vec lifecycle event {'msg': 'training model with 3 workers on 38908 vocabulary and 100 features, using sg=1 hs=0 sample=0.001 negative=5 window=5 shrink_windows=True', 'datetime': '2025-07-19T17:16:10.137025', 'gensim': '4.3.2', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26100-SP0', 'event': 'train'}
+2025-07-19 17:16:11 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 6.12% examples, 419234 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:12 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 12.65% examples, 437262 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:13 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 18.67% examples, 424142 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:14 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 24.31% examples, 415251 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:15 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 29.88% examples, 410548 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:16 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 35.37% examples, 405727 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:17 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 40.93% examples, 402589 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:18 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 46.27% examples, 399078 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:19 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 51.73% examples, 397374 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:20 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 56.65% examples, 391627 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:21 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 62.32% examples, 390879 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:22 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 67.80% examples, 390420 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:23 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 73.27% examples, 389981 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:24 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 79.02% examples, 388907 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:25 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 84.34% examples, 387931 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:26 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 89.81% examples, 387660 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:27 - gensim.models.word2vec - INFO - EPOCH 0 - PROGRESS: at 95.22% examples, 386866 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:28 - gensim.models.word2vec - INFO - EPOCH 0: training on 7446999 raw words (7020166 effective words) took 18.1s, 387684 effective words/s
+2025-07-19 17:16:29 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 5.32% examples, 363186 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:30 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 10.51% examples, 358159 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:31 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 16.12% examples, 365805 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:32 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 21.75% examples, 372180 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:33 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 27.26% examples, 373203 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:34 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 32.77% examples, 376003 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:35 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 38.49% examples, 378358 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:36 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 43.98% examples, 378024 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:37 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 49.59% examples, 379277 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:38 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 55.18% examples, 379279 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:39 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 60.83% examples, 379799 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:40 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 66.46% examples, 380525 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:41 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 71.81% examples, 379438 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:42 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 77.40% examples, 379561 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:43 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 83.02% examples, 380406 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:44 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 88.50% examples, 380718 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:45 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 94.29% examples, 381427 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:46 - gensim.models.word2vec - INFO - EPOCH 1 - PROGRESS: at 99.78% examples, 381451 words/s, in_qsize 2, out_qsize 1
+2025-07-19 17:16:46 - gensim.models.word2vec - INFO - EPOCH 1: training on 7446999 raw words (7020238 effective words) took 18.4s, 381933 effective words/s
+2025-07-19 17:16:47 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 5.32% examples, 365396 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:48 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 10.91% examples, 376920 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:49 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 16.25% examples, 374008 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:50 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 21.89% examples, 376078 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:51 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 27.51% examples, 376664 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:52 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 33.16% examples, 377890 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:53 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 38.49% examples, 376155 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:54 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 43.98% examples, 377231 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:55 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 49.59% examples, 377275 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:56 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 55.32% examples, 379854 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:16:57 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 60.96% examples, 380178 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:58 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 66.72% examples, 381695 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:16:59 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 72.07% examples, 380894 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:00 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 77.80% examples, 381825 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:02 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 83.55% examples, 381612 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:03 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 89.16% examples, 381572 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:04 - gensim.models.word2vec - INFO - EPOCH 2 - PROGRESS: at 94.82% examples, 382072 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:04 - gensim.models.word2vec - INFO - EPOCH 2: training on 7446999 raw words (7020607 effective words) took 18.4s, 382507 effective words/s
+2025-07-19 17:17:06 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 5.32% examples, 367610 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:07 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 10.91% examples, 377810 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:08 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 16.52% examples, 381174 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:09 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 21.89% examples, 377252 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:10 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 27.51% examples, 378057 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:11 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 33.03% examples, 378796 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:12 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 38.88% examples, 382277 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:13 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 44.52% examples, 382795 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:14 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 50.13% examples, 383212 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:15 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 55.85% examples, 383963 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:16 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 61.37% examples, 383486 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:17 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 66.98% examples, 384302 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:18 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 72.21% examples, 382658 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:19 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 78.19% examples, 384729 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:20 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 83.69% examples, 384586 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:21 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 89.56% examples, 385537 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:22 - gensim.models.word2vec - INFO - EPOCH 3 - PROGRESS: at 95.22% examples, 385607 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:23 - gensim.models.word2vec - INFO - EPOCH 3: training on 7446999 raw words (7020311 effective words) took 18.2s, 386423 effective words/s
+2025-07-19 17:17:24 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 5.32% examples, 370695 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:25 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 10.78% examples, 376284 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:26 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 16.25% examples, 375790 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:27 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 21.50% examples, 368566 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:28 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 26.57% examples, 365631 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:29 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 31.85% examples, 366313 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:30 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 37.55% examples, 367811 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:31 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 43.18% examples, 369984 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:32 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 48.80% examples, 372231 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:33 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 54.37% examples, 373397 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:34 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 60.03% examples, 375277 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:35 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 65.68% examples, 376451 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:36 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 71.29% examples, 376750 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:37 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 76.98% examples, 377386 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:38 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 82.62% examples, 377671 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:39 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 88.21% examples, 378612 words/s, in_qsize 5, out_qsize 0
+2025-07-19 17:17:40 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 93.76% examples, 378977 words/s, in_qsize 6, out_qsize 0
+2025-07-19 17:17:41 - gensim.models.word2vec - INFO - EPOCH 4 - PROGRESS: at 99.51% examples, 379902 words/s, in_qsize 4, out_qsize 0
+2025-07-19 17:17:41 - gensim.models.word2vec - INFO - EPOCH 4: training on 7446999 raw words (7020111 effective words) took 18.5s, 380396 effective words/s
+2025-07-19 17:17:41 - gensim.utils - INFO - Word2Vec lifecycle event {'msg': 'training on 37234995 raw words (35101433 effective words) took 91.5s, 383664 effective words/s', 'datetime': '2025-07-19T17:17:41.627965', 'gensim': '4.3.2', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26100-SP0', 'event': 'train'}
+2025-07-19 17:17:41 - gensim.utils - INFO - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=38908, vector_size=100, alpha=0.025>', 'datetime': '2025-07-19T17:17:41.627965', 'gensim': '4.3.2', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26100-SP0', 'event': 'created'}
+2025-07-19 17:17:41 - root - INFO - Object saved successfully at: model\vectorizer.pkl
+2025-07-19 17:17:41 - root - INFO - Word2Vec model saved successfully.
+2025-07-19 17:17:41 - root - INFO - Vectorizing training and test sentences...
+2025-07-19 17:17:47 - root - WARNING - No valid vectors found for sentence: cripppinnn
+2025-07-19 17:17:50 - root - WARNING - No valid vectors found for sentence: bolesniciii
+2025-07-19 17:17:52 - root - WARNING - No valid vectors found for sentence: griexsevia
+2025-07-19 17:17:55 - root - WARNING - No valid vectors found for sentence: daaaaaaaad
+2025-07-19 17:17:56 - root - WARNING - No valid vectors found for sentence: teska
+2025-07-19 17:18:03 - root - WARNING - No valid vectors found for sentence: hahahahahahahahahahahahahahahahaha
+2025-07-19 17:18:04 - root - WARNING - No valid vectors found for sentence: pederiiiii
+2025-07-19 17:18:08 - root - WARNING - No valid vectors found for sentence: knackered
+2025-07-19 17:18:08 - root - WARNING - No valid vectors found for sentence: normalni marsiraju samodopadno
+2025-07-19 17:18:08 - root - WARNING - No valid vectors found for sentence: pedos
+2025-07-19 17:18:09 - root - WARNING - No valid vectors found for sentence: nationalroseday
+2025-07-19 17:18:18 - root - WARNING - No valid vectors found for sentence: gofuckyourself
+2025-07-19 17:18:22 - root - WARNING - No valid vectors found for sentence: newp
+2025-07-19 17:18:26 - root - WARNING - No valid vectors found for sentence: yessssss
+2025-07-19 17:18:29 - root - WARNING - No valid vectors found for sentence: jfc
+2025-07-19 17:18:34 - root - WARNING - No valid vectors found for sentence: makenzie
+2025-07-19 17:18:36 - root - WARNING - No valid vectors found for sentence: lolllllll
+2025-07-19 17:18:36 - root - WARNING - No valid vectors found for sentence: loooooooos
+2025-07-19 17:18:44 - root - WARNING - No valid vectors found for sentence: kretenizam
+2025-07-19 17:18:48 - root - WARNING - No valid vectors found for sentence: idit
+2025-07-19 17:18:49 - root - WARNING - No valid vectors found for sentence: triplecatbox
+2025-07-19 17:18:52 - root - WARNING - No valid vectors found for sentence: hahahahahahahahahah
+2025-07-19 17:18:52 - root - WARNING - No valid vectors found for sentence: kume
+2025-07-19 17:18:52 - root - WARNING - No valid vectors found for sentence: meandmygirl mybabygirlai
+2025-07-19 17:18:53 - root - WARNING - No valid vectors found for sentence: gluposti
+2025-07-19 17:18:55 - root - WARNING - No valid vectors found for sentence: blaaaaaack nnnnnneed shhhhhhhhhhotttttt
+2025-07-19 17:19:01 - root - WARNING - No valid vectors found for sentence: idkk mwauuuhhh
+2025-07-19 17:19:01 - root - WARNING - No valid vectors found for sentence: seasone
+2025-07-19 17:19:03 - root - WARNING - No valid vectors found for sentence: darko lukacevic
+2025-07-19 17:19:06 - root - WARNING - No valid vectors found for sentence: wrng
+2025-07-19 17:19:10 - root - WARNING - No valid vectors found for sentence: hardtop
+2025-07-19 17:19:12 - root - WARNING - No valid vectors found for sentence: draaaaaag wrooooonggg
+2025-07-19 17:19:12 - root - WARNING - No valid vectors found for sentence: yessssssss
+2025-07-19 17:19:17 - root - WARNING - No valid vectors found for sentence: thanksssssssssssssssssssssssssssss
+2025-07-19 17:19:18 - root - WARNING - No valid vectors found for sentence: wikipediablocked
+2025-07-19 17:19:20 - root - WARNING - No valid vectors found for sentence: napokoooooon
+2025-07-19 17:19:20 - root - WARNING - No valid vectors found for sentence: demonkracija
+2025-07-19 17:19:20 - root - WARNING - No valid vectors found for sentence: youpi hihihi
+2025-07-19 17:19:20 - root - WARNING - No valid vectors found for sentence: sljam
+2025-07-19 17:19:21 - root - WARNING - No valid vectors found for sentence: arabica
+2025-07-19 17:19:22 - root - WARNING - No valid vectors found for sentence: bandurria
+2025-07-19 17:19:23 - root - WARNING - No valid vectors found for sentence: soooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo bbbbbboooooorrrriiiinnnngggg
+2025-07-19 17:19:25 - root - WARNING - No valid vectors found for sentence: joiieeeee allover
+2025-07-19 17:19:32 - root - WARNING - No valid vectors found for sentence: tena naric
+2025-07-19 17:19:33 - root - WARNING - No valid vectors found for sentence: janniejdoe
+2025-07-19 17:19:34 - root - WARNING - No valid vectors found for sentence: mackie
+2025-07-19 17:19:34 - root - WARNING - No valid vectors found for sentence: neverrrrrrrrrrr
+2025-07-19 17:19:35 - root - WARNING - No valid vectors found for sentence: opendocument
+2025-07-19 17:19:37 - root - WARNING - No valid vectors found for sentence: lazovi
+2025-07-19 17:19:37 - root - WARNING - No valid vectors found for sentence: dnt
+2025-07-19 17:19:41 - root - WARNING - No valid vectors found for sentence: yupiiii
+2025-07-19 17:19:41 - root - WARNING - No valid vectors found for sentence: bandura
+2025-07-19 17:19:43 - root - WARNING - No valid vectors found for sentence: suckkkkkkkkkkkkkkk
+2025-07-19 17:19:44 - root - WARNING - No valid vectors found for sentence: katica vukovac vidakovic
+2025-07-19 17:19:52 - root - WARNING - No valid vectors found for sentence: maninstone
+2025-07-19 17:19:54 - root - WARNING - No valid vectors found for sentence: ngitingtagumpay
+2025-07-19 17:19:54 - root - WARNING - No valid vectors found for sentence: epona epona epona epona
+2025-07-19 17:19:58 - root - WARNING - No valid vectors found for sentence: benten
+2025-07-19 17:19:59 - root - WARNING - No valid vectors found for sentence: dramatized
+2025-07-19 17:20:03 - root - WARNING - No valid vectors found for sentence: premalo
+2025-07-19 17:20:05 - root - WARNING - No valid vectors found for sentence: shitpussiessay
+2025-07-19 17:20:10 - root - WARNING - No valid vectors found for sentence: aisa
+2025-07-19 17:20:10 - root - WARNING - No valid vectors found for sentence: sck
+2025-07-19 17:20:10 - root - WARNING - No valid vectors found for sentence: hebeni ritopikaci
+2025-07-19 17:20:11 - root - WARNING - No valid vectors found for sentence: doomentio
+2025-07-19 17:20:12 - root - WARNING - No valid vectors found for sentence: definately
+2025-07-19 17:20:16 - root - WARNING - No valid vectors found for sentence: lomi
+2025-07-19 17:20:16 - root - WARNING - No valid vectors found for sentence: twp
+2025-07-19 17:20:22 - root - WARNING - No valid vectors found for sentence: lodger
+2025-07-19 17:20:23 - root - WARNING - No valid vectors found for sentence: matruman
+2025-07-19 17:20:24 - root - WARNING - No valid vectors found for sentence: lakerss
+2025-07-19 17:20:30 - root - WARNING - No valid vectors found for sentence: heyllo
+2025-07-19 17:20:30 - root - WARNING - No valid vectors found for sentence: krepaj
+2025-07-19 17:20:31 - root - WARNING - No valid vectors found for sentence: ivor silicic
+2025-07-19 17:20:37 - root - WARNING - No valid vectors found for sentence: blackwindow chroma
+2025-07-19 17:20:38 - root - WARNING - No valid vectors found for sentence: subban
+2025-07-19 17:20:41 - root - WARNING - No valid vectors found for sentence: mmmmmusssssslllllllllllllimmmmz traaaaaaassssssssssh
+2025-07-19 17:20:41 - root - WARNING - No valid vectors found for sentence: hahhhahahah
+2025-07-19 17:20:44 - root - WARNING - No valid vectors found for sentence: idiotizam
+2025-07-19 17:20:45 - root - WARNING - No valid vectors found for sentence: hups
+2025-07-19 17:20:50 - root - WARNING - No valid vectors found for sentence: siiiigh
+2025-07-19 17:20:50 - root - WARNING - No valid vectors found for sentence: peskier
+2025-07-19 17:20:51 - root - WARNING - No valid vectors found for sentence: primitivci
+2025-07-19 17:20:52 - root - WARNING - No valid vectors found for sentence: pizde placekicker
+2025-07-19 17:20:53 - root - WARNING - No valid vectors found for sentence: bullcrap
+2025-07-19 17:20:54 - root - WARNING - No valid vectors found for sentence: hahahahahhaahhahahahahaahahhahahahahahahahahahahahahahahah
+2025-07-19 17:20:58 - root - WARNING - No valid vectors found for sentence: pirateesss
+2025-07-19 17:20:58 - root - WARNING - No valid vectors found for sentence: stanced
+2025-07-19 17:21:01 - root - WARNING - No valid vectors found for sentence: dieeeeeeeeeeeeeeeeeeeee
+2025-07-19 17:21:03 - root - WARNING - No valid vectors found for sentence: ostojicu otkazzz
+2025-07-19 17:21:05 - root - WARNING - No valid vectors found for sentence: hihihihihi
+2025-07-19 17:21:05 - root - WARNING - No valid vectors found for sentence: greeeeeeeeeeeen
+2025-07-19 17:21:09 - root - WARNING - No valid vectors found for sentence: ttunderstandmetaphors
+2025-07-19 17:21:14 - root - WARNING - No valid vectors found for sentence: waaaiiiitttt
+2025-07-19 17:21:15 - root - WARNING - No valid vectors found for sentence: swheeet
+2025-07-19 17:21:20 - root - WARNING - No valid vectors found for sentence: getthetenyearoldsoffhereplease
+2025-07-19 17:21:20 - root - WARNING - No valid vectors found for sentence: rojonegro
+2025-07-19 17:21:24 - root - WARNING - No valid vectors found for sentence: lolss
+2025-07-19 17:21:25 - root - WARNING - No valid vectors found for sentence: mangosteen
+2025-07-19 17:21:26 - root - WARNING - No valid vectors found for sentence: hajahahqhahagahsha
+2025-07-19 17:21:26 - root - WARNING - No valid vectors found for sentence: kombi
+2025-07-19 17:21:30 - root - WARNING - No valid vectors found for sentence: sherurcij
+2025-07-19 17:21:38 - root - WARNING - No valid vectors found for sentence: alelujaaaaa
+2025-07-19 17:21:41 - root - WARNING - No valid vectors found for sentence: sooooooo luckyyyyy
+2025-07-19 17:21:44 - root - WARNING - No valid vectors found for sentence: ckute
+2025-07-19 17:21:45 - root - WARNING - No valid vectors found for sentence: traaaniiieeesss eliiiimiiiinateeed
+2025-07-19 17:21:45 - root - WARNING - No valid vectors found for sentence: pedercineeeeee
+2025-07-19 17:21:47 - root - WARNING - No valid vectors found for sentence: izazivanje
+2025-07-19 17:21:47 - root - WARNING - No valid vectors found for sentence: stiskavac
+2025-07-19 17:21:48 - root - WARNING - No valid vectors found for sentence: potpisujem
+2025-07-19 17:21:48 - root - WARNING - No valid vectors found for sentence: evangel
+2025-07-19 17:21:50 - root - WARNING - No valid vectors found for sentence: kretenusa
+2025-07-19 17:21:53 - root - WARNING - No valid vectors found for sentence: wikipediablocked
+2025-07-19 17:21:53 - root - WARNING - No valid vectors found for sentence: wrse
+2025-07-19 17:21:55 - root - WARNING - No valid vectors found for sentence: mmmmmusssssssslims trrrrrrrrasssshhhhh
+2025-07-19 17:21:56 - root - WARNING - No valid vectors found for sentence: razvaljujj
+2025-07-19 17:21:57 - root - WARNING - No valid vectors found for sentence: ceterizine zyrtec benadryl diphenhydramine
+2025-07-19 17:21:59 - root - WARNING - No valid vectors found for sentence: templatedata
+2025-07-19 17:22:05 - root - WARNING - No valid vectors found for sentence: fathersdayai specialaia
+2025-07-19 17:22:06 - root - WARNING - No valid vectors found for sentence: ammmmmbbaaaaaa
+2025-07-19 17:22:07 - root - WARNING - No valid vectors found for sentence: follback
+2025-07-19 17:22:08 - root - WARNING - No valid vectors found for sentence: womderful
+2025-07-19 17:22:08 - root - WARNING - No valid vectors found for sentence: maskare
+2025-07-19 17:22:11 - root - WARNING - No valid vectors found for sentence: hhahahahahhhahahahahahahahahhahaahha
+2025-07-19 17:22:13 - root - WARNING - No valid vectors found for sentence: kkkkayy
+2025-07-19 17:22:14 - root - WARNING - No valid vectors found for sentence: ahmen
+2025-07-19 17:22:15 - root - WARNING - No valid vectors found for sentence: lumidek
+2025-07-19 17:22:16 - root - WARNING - No valid vectors found for sentence: opposeleave
+2025-07-19 17:22:17 - root - WARNING - No valid vectors found for sentence: traaansss wroooonggg
+2025-07-19 17:22:20 - root - WARNING - No valid vectors found for sentence: manky
+2025-07-19 17:22:23 - root - WARNING - No valid vectors found for sentence: womeeeeeeeeeeeeeeeeeen traaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaash
+2025-07-19 17:22:24 - root - WARNING - No valid vectors found for sentence: budimo gluuuuuuupi
+2025-07-19 17:22:27 - root - WARNING - No valid vectors found for sentence: okaydokay
+2025-07-19 17:22:28 - root - WARNING - No valid vectors found for sentence: usercrocker
+2025-07-19 17:22:28 - root - WARNING - No valid vectors found for sentence: foliage
+2025-07-19 17:22:30 - root - WARNING - No valid vectors found for sentence: yeaaaahh
+2025-07-19 17:22:30 - root - WARNING - No valid vectors found for sentence: ozbiljno
+2025-07-19 17:22:34 - root - WARNING - No valid vectors found for sentence: qual
+2025-07-19 17:22:37 - root - WARNING - No valid vectors found for sentence: seronja xxl
+2025-07-19 17:22:38 - root - WARNING - No valid vectors found for sentence: dekapitirati
+2025-07-19 17:22:39 - root - WARNING - No valid vectors found for sentence: bravooooo
+2025-07-19 17:22:40 - root - WARNING - No valid vectors found for sentence: jessielturner
+2025-07-19 17:22:41 - root - WARNING - No valid vectors found for sentence: hahahahhahah thakssssssssssssss
+2025-07-19 17:22:42 - root - WARNING - No valid vectors found for sentence: fuuuuuuuj
+2025-07-19 17:22:43 - root - WARNING - No valid vectors found for sentence: shillll
+2025-07-19 17:22:45 - root - WARNING - No valid vectors found for sentence: ifollowback
+2025-07-19 17:22:48 - root - WARNING - No valid vectors found for sentence: freshen snaphaan
+2025-07-19 17:22:49 - root - WARNING - No valid vectors found for sentence: douuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuche baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaag
+2025-07-19 17:22:49 - root - WARNING - No valid vectors found for sentence: tongueouttuesday
+2025-07-19 17:22:54 - root - WARNING - No valid vectors found for sentence: licimjerko
+2025-07-19 17:22:54 - root - WARNING - No valid vectors found for sentence: siiiiiiiiiiiiiiiiiiiiiiiigh
+2025-07-19 17:22:54 - root - WARNING - No valid vectors found for sentence: noopee
+2025-07-19 17:22:59 - root - WARNING - No valid vectors found for sentence: shipshape
+2025-07-19 17:23:04 - root - WARNING - No valid vectors found for sentence: greathonour careerconvos
+2025-07-19 17:23:06 - root - WARNING - No valid vectors found for sentence: kilolumen
+2025-07-19 17:23:07 - root - WARNING - No valid vectors found for sentence: katastrofa
+2025-07-19 17:23:08 - root - WARNING - No valid vectors found for sentence: mmmmmusssssssslims trrrrrrrrasssshhhhh
+2025-07-19 17:23:10 - root - WARNING - No valid vectors found for sentence: hmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+2025-07-19 17:23:12 - root - WARNING - No valid vectors found for sentence: wiktionaryarchicebidae wiktionaryarchicebus
+2025-07-19 17:23:13 - root - WARNING - No valid vectors found for sentence: untreatable
+2025-07-19 17:23:13 - root - WARNING - No valid vectors found for sentence: zdzisaw
+2025-07-19 17:23:16 - root - WARNING - No valid vectors found for sentence: nuklearnu
+2025-07-19 17:23:18 - root - WARNING - No valid vectors found for sentence: obesedyke
+2025-07-19 17:23:20 - root - WARNING - No valid vectors found for sentence: helloooooo
+2025-07-19 17:23:22 - root - WARNING - No valid vectors found for sentence: vvvvvvvummmmmmmmm
+2025-07-19 17:23:24 - root - WARNING - No valid vectors found for sentence: sljam neradnici predefine
+2025-07-19 17:23:28 - root - WARNING - No valid vectors found for sentence: degenerluk
+2025-07-19 17:23:31 - root - WARNING - No valid vectors found for sentence: covet
+2025-07-19 17:23:31 - root - WARNING - No valid vectors found for sentence: gofuckyourself
+2025-07-19 17:23:32 - root - WARNING - No valid vectors found for sentence: pderisanje
+2025-07-19 17:23:35 - root - WARNING - No valid vectors found for sentence: porphyria hemophiliac
+2025-07-19 17:23:36 - root - WARNING - No valid vectors found for sentence: bovvered
+2025-07-19 17:23:37 - root - WARNING - No valid vectors found for sentence: titleholder
+2025-07-19 17:23:40 - root - WARNING - No valid vectors found for sentence: shingy
+2025-07-19 17:23:45 - root - WARNING - No valid vectors found for sentence: milion
+2025-07-19 17:23:46 - root - WARNING - No valid vectors found for sentence: bafoonicus
+2025-07-19 17:23:49 - root - WARNING - No valid vectors found for sentence: yeeeeess
+2025-07-19 17:23:50 - root - WARNING - No valid vectors found for sentence: fowles
+2025-07-19 17:23:51 - root - WARNING - No valid vectors found for sentence: sramotaaaaa zds
+2025-07-19 17:23:53 - root - WARNING - No valid vectors found for sentence: tabiahhhh
+2025-07-19 17:23:53 - root - WARNING - No valid vectors found for sentence: hahahahahahahhahahahahahahahahahahhahahahahahahahahahahaahahhahaahhahahaahahahaaaaaa
+2025-07-19 17:23:54 - root - WARNING - No valid vectors found for sentence: muahaha
+2025-07-19 17:23:55 - root - WARNING - No valid vectors found for sentence: resul mehmedovic
+2025-07-19 17:23:56 - root - WARNING - No valid vectors found for sentence: weareincontrol
+2025-07-19 17:23:59 - root - WARNING - No valid vectors found for sentence: gldelig
+2025-07-19 17:24:04 - root - WARNING - No valid vectors found for sentence: mmmhm
+2025-07-19 17:24:05 - root - WARNING - No valid vectors found for sentence: hejjj sirree
+2025-07-19 17:24:06 - root - WARNING - No valid vectors found for sentence: bihdaysway bihdaysway bihdaysway bihdaysway
+2025-07-19 17:24:07 - root - WARNING - No valid vectors found for sentence: illusional
+2025-07-19 17:24:09 - root - WARNING - No valid vectors found for sentence: bcashhhhhhhhhhconnectttt
+2025-07-19 17:24:13 - root - WARNING - No valid vectors found for sentence: aiaiaiaiaiaiaiaiaiaiai
+2025-07-19 17:24:13 - root - WARNING - No valid vectors found for sentence: predivno
+2025-07-19 17:24:15 - root - WARNING - No valid vectors found for sentence: neljudi
+2025-07-19 17:24:16 - root - WARNING - No valid vectors found for sentence: extracellular
+2025-07-19 17:24:29 - root - WARNING - No valid vectors found for sentence: katolibani
+2025-07-19 17:24:30 - root - WARNING - No valid vectors found for sentence: ghostghostghostghostghost
+2025-07-19 17:24:33 - root - WARNING - No valid vectors found for sentence: snooor
+2025-07-19 17:24:35 - root - WARNING - No valid vectors found for sentence: veco kaluerovic
+2025-07-19 17:24:40 - root - WARNING - No valid vectors found for sentence: immigrantssssss
+2025-07-19 17:24:41 - root - WARNING - No valid vectors found for sentence: okaaaay
+2025-07-19 17:24:44 - root - WARNING - No valid vectors found for sentence: ashmolean
+2025-07-19 17:24:44 - root - WARNING - No valid vectors found for sentence: wuuuuuuuussssssssssbombbombbombbombbombbombbombbombbomb
+2025-07-19 17:24:46 - root - WARNING - No valid vectors found for sentence: staranurag
+2025-07-19 17:24:46 - root - WARNING - No valid vectors found for sentence: lesimari novinarski
+2025-07-19 17:24:47 - root - WARNING - No valid vectors found for sentence: pocky
+2025-07-19 17:24:52 - root - WARNING - No valid vectors found for sentence: riiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiight
+2025-07-19 17:24:59 - root - WARNING - No valid vectors found for sentence: exorcised
+2025-07-19 17:25:00 - root - WARNING - No valid vectors found for sentence: gotovi
+2025-07-19 17:25:01 - root - WARNING - No valid vectors found for sentence: goooooood
+2025-07-19 17:25:09 - root - WARNING - No valid vectors found for sentence: hematite
+2025-07-19 17:25:13 - root - WARNING - No valid vectors found for sentence: ovrhoatelje
+2025-07-19 17:25:15 - root - WARNING - No valid vectors found for sentence: gumboot
+2025-07-19 17:25:19 - root - WARNING - No valid vectors found for sentence: umrite
+2025-07-19 17:25:25 - root - WARNING - No valid vectors found for sentence: gansta
+2025-07-19 17:25:26 - root - WARNING - No valid vectors found for sentence: ssssssshhhhhhhooooot bllllllakkk
+2025-07-19 17:25:32 - root - WARNING - No valid vectors found for sentence: hahahahhahaha
+2025-07-19 17:25:34 - root - WARNING - No valid vectors found for sentence: achtung
+2025-07-19 17:25:36 - root - WARNING - No valid vectors found for sentence: preslagivanje
+2025-07-19 17:25:38 - root - WARNING - No valid vectors found for sentence: duje caviar
+2025-07-19 17:25:38 - root - WARNING - No valid vectors found for sentence: duska
+2025-07-19 17:25:39 - root - WARNING - No valid vectors found for sentence: bombbombbombbombbomb
+2025-07-19 17:25:40 - root - WARNING - No valid vectors found for sentence: markic podbacila
+2025-07-19 17:25:41 - root - WARNING - No valid vectors found for sentence: geoeg geog
+2025-07-19 17:25:42 - root - WARNING - No valid vectors found for sentence: heeeermiiieeeess nooooormaaaaal
+2025-07-19 17:25:42 - root - WARNING - No valid vectors found for sentence: wwwwwwwommmmmmmen beeeeeeest ner
+2025-07-19 17:25:45 - root - WARNING - No valid vectors found for sentence: sarashi
+2025-07-19 17:25:48 - root - WARNING - No valid vectors found for sentence: puddudfudfuues ueuuuddud ufu
+2025-07-19 17:25:49 - root - WARNING - No valid vectors found for sentence: wmen whres
+2025-07-19 17:25:50 - root - WARNING - No valid vectors found for sentence: goodfellas
+2025-07-19 17:25:50 - root - WARNING - No valid vectors found for sentence: prayingfororlando prayingforeveryone
+2025-07-19 17:25:52 - root - WARNING - No valid vectors found for sentence: samoljubav
+2025-07-19 17:25:53 - root - WARNING - No valid vectors found for sentence: fartacus
+2025-07-19 17:25:55 - root - WARNING - No valid vectors found for sentence: faaaaake
+2025-07-19 17:25:59 - root - WARNING - No valid vectors found for sentence: salji salji
+2025-07-19 17:26:02 - root - WARNING - No valid vectors found for sentence: dependss
+2025-07-19 17:26:03 - root - WARNING - No valid vectors found for sentence: usercfif
+2025-07-19 17:26:07 - root - WARNING - No valid vectors found for sentence: sureeee
+2025-07-19 17:26:09 - root - WARNING - No valid vectors found for sentence: yesallwomenbelonginthekitchen
+2025-07-19 17:26:10 - root - WARNING - No valid vectors found for sentence: glenpeterson
+2025-07-19 17:26:13 - root - WARNING - No valid vectors found for sentence: rnil
+2025-07-19 17:26:18 - root - WARNING - No valid vectors found for sentence: sliver
+2025-07-19 17:26:20 - root - WARNING - No valid vectors found for sentence: brrrrrrrr
+2025-07-19 17:26:20 - root - WARNING - No valid vectors found for sentence: birdbrain
+2025-07-19 17:26:20 - root - WARNING - No valid vectors found for sentence: najebali
+2025-07-19 17:26:21 - root - WARNING - No valid vectors found for sentence: ranted
+2025-07-19 17:26:22 - root - WARNING - No valid vectors found for sentence: fuccckkkkkkkkk
+2025-07-19 17:26:23 - root - WARNING - No valid vectors found for sentence: gyspsies
+2025-07-19 17:26:26 - root - WARNING - No valid vectors found for sentence: kingggg
+2025-07-19 17:26:26 - root - WARNING - No valid vectors found for sentence: usfuckkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk uuuuuuuuuuuuuuuuuuuuuuuuuuu ddddddddddiiiiiiiiiiiccccccccccckkkkkkkkkk
+2025-07-19 17:26:26 - root - WARNING - No valid vectors found for sentence: riiiight
+2025-07-19 17:26:30 - root - WARNING - No valid vectors found for sentence: yepppppppp
+2025-07-19 17:26:34 - root - WARNING - No valid vectors found for sentence: stfuuuuu
+2025-07-19 17:26:34 - root - WARNING - No valid vectors found for sentence: freehold
+2025-07-19 17:26:36 - root - WARNING - No valid vectors found for sentence: avanti azzurri
+2025-07-19 17:26:36 - root - WARNING - No valid vectors found for sentence: modtalkleak
+2025-07-19 17:26:37 - root - WARNING - No valid vectors found for sentence: skup umobolnika
+2025-07-19 17:26:37 - root - WARNING - No valid vectors found for sentence: novokomponirani
+2025-07-19 17:26:39 - root - WARNING - No valid vectors found for sentence: kkkkkkkkk
+2025-07-19 17:26:41 - root - WARNING - No valid vectors found for sentence: hahahahaahha
+2025-07-19 17:26:41 - root - WARNING - No valid vectors found for sentence: takeje
+2025-07-19 17:26:43 - root - WARNING - No valid vectors found for sentence: rayc
+2025-07-19 17:26:45 - root - WARNING - No valid vectors found for sentence: veesicle vesicle
+2025-07-19 17:26:46 - root - WARNING - No valid vectors found for sentence: okayy
+2025-07-19 17:26:46 - root - WARNING - No valid vectors found for sentence: templateunsigned
+2025-07-19 17:26:47 - root - WARNING - No valid vectors found for sentence: userstwalkerster
+2025-07-19 17:26:49 - root - WARNING - No valid vectors found for sentence: userlrothenberg
+2025-07-19 17:26:53 - root - WARNING - No valid vectors found for sentence: neeecxttt stuttgaopen
+2025-07-19 17:26:57 - root - WARNING - No valid vectors found for sentence: matcha
+2025-07-19 17:26:58 - root - WARNING - No valid vectors found for sentence: ubre thicko
+2025-07-19 17:26:59 - root - WARNING - No valid vectors found for sentence: gloucesterrugby
+2025-07-19 17:27:03 - root - WARNING - No valid vectors found for sentence: fujjjjjj
+2025-07-19 17:27:05 - root - WARNING - No valid vectors found for sentence: inselbergs
+2025-07-19 17:27:05 - root - WARNING - No valid vectors found for sentence: booooring
+2025-07-19 17:27:05 - root - WARNING - No valid vectors found for sentence: stopimmigration
+2025-07-19 17:27:14 - root - WARNING - No valid vectors found for sentence: templateunsignedip
+2025-07-19 17:27:15 - root - WARNING - No valid vectors found for sentence: metallurgy
+2025-07-19 17:27:19 - root - WARNING - No valid vectors found for sentence: pffffffffffffffft
+2025-07-19 17:27:21 - root - WARNING - No valid vectors found for sentence: sveiks
+2025-07-19 17:27:24 - root - WARNING - No valid vectors found for sentence: gorgosity
+2025-07-19 17:27:26 - root - WARNING - No valid vectors found for sentence: jupiiiii
+2025-07-19 17:27:28 - root - WARNING - No valid vectors found for sentence: gujina
+2025-07-19 17:27:30 - root - WARNING - No valid vectors found for sentence: matchbook
+2025-07-19 17:27:31 - root - WARNING - No valid vectors found for sentence: ilyke
+2025-07-19 17:27:33 - root - WARNING - No valid vectors found for sentence: ahahahahahah
+2025-07-19 17:27:40 - root - WARNING - No valid vectors found for sentence: wasmadwasibnoworsteverws
+2025-07-19 17:27:40 - root - WARNING - No valid vectors found for sentence: shhhh
+2025-07-19 17:27:42 - root - WARNING - No valid vectors found for sentence: szeptember
+2025-07-19 17:27:43 - root - WARNING - No valid vectors found for sentence: bluerain
+2025-07-19 17:27:48 - root - WARNING - No valid vectors found for sentence: jeannette belleau
+2025-07-19 17:27:49 - root - WARNING - No valid vectors found for sentence: kretenaaaaaa
+2025-07-19 17:27:51 - root - WARNING - No valid vectors found for sentence: darksky
+2025-07-19 17:27:51 - root - WARNING - No valid vectors found for sentence: jad tuga bipedal
+2025-07-19 17:27:55 - root - WARNING - No valid vectors found for sentence: niggaaahhhh
+2025-07-19 17:27:57 - root - WARNING - No valid vectors found for sentence: jad bipedal
+2025-07-19 17:27:58 - root - WARNING - No valid vectors found for sentence: czynski
+2025-07-19 17:27:58 - root - WARNING - No valid vectors found for sentence: childess
+2025-07-19 17:28:00 - root - WARNING - No valid vectors found for sentence: foooooooooooooood
+2025-07-19 17:28:01 - root - WARNING - No valid vectors found for sentence: templatemoogfest templatemoogfest templatemormoopidae
+2025-07-19 17:28:07 - root - WARNING - No valid vectors found for sentence: wrng
+2025-07-19 17:28:09 - root - WARNING - No valid vectors found for sentence: zdravko
+2025-07-19 17:28:11 - root - WARNING - No valid vectors found for sentence: bolesno
+2025-07-19 17:28:13 - root - WARNING - No valid vectors found for sentence: blackmilk
+2025-07-19 17:28:13 - root - WARNING - No valid vectors found for sentence: twraj
+2025-07-19 17:28:14 - root - WARNING - No valid vectors found for sentence: substunsigned
+2025-07-19 17:28:19 - root - WARNING - No valid vectors found for sentence: kralj
+2025-07-19 17:28:20 - root - WARNING - No valid vectors found for sentence: lmfaoooooo
+2025-07-19 17:28:23 - root - WARNING - No valid vectors found for sentence: tipicno muslimanski
+2025-07-19 17:28:23 - root - WARNING - No valid vectors found for sentence: jeffreesworld
+2025-07-19 17:28:26 - root - WARNING - No valid vectors found for sentence: martinevans
+2025-07-19 17:28:26 - root - WARNING - No valid vectors found for sentence: wikimath
+2025-07-19 17:28:29 - root - WARNING - No valid vectors found for sentence: nanette
+2025-07-19 17:28:33 - root - WARNING - No valid vectors found for sentence: jtpm
+2025-07-19 17:28:33 - root - WARNING - No valid vectors found for sentence: reow
+2025-07-19 17:28:36 - root - WARNING - No valid vectors found for sentence: btl
+2025-07-19 17:28:38 - root - WARNING - No valid vectors found for sentence: excellentttt
+2025-07-19 17:28:42 - root - WARNING - No valid vectors found for sentence: mrbadgersir
+2025-07-19 17:28:42 - root - WARNING - No valid vectors found for sentence: abloo bloo
+2025-07-19 17:28:46 - root - WARNING - No valid vectors found for sentence: neoballmon
+2025-07-19 17:28:46 - root - WARNING - No valid vectors found for sentence: beachhh
+2025-07-19 17:28:47 - root - WARNING - No valid vectors found for sentence: nopeee
+2025-07-19 17:28:50 - root - WARNING - No valid vectors found for sentence: primitivac
+2025-07-19 17:28:50 - root - WARNING - No valid vectors found for sentence: odvraaaatnooooooooooo
+2025-07-19 17:28:53 - root - WARNING - No valid vectors found for sentence: vietminh
+2025-07-19 17:28:56 - root - WARNING - No valid vectors found for sentence: wpww
+2025-07-19 17:28:59 - root - WARNING - No valid vectors found for sentence: blaxican
+2025-07-19 17:29:00 - root - WARNING - No valid vectors found for sentence: evrik
+2025-07-19 17:29:01 - root - WARNING - No valid vectors found for sentence: aaaaaaaaaaa
+2025-07-19 17:29:02 - root - WARNING - No valid vectors found for sentence: hahahahahahahahahahaha
+2025-07-19 17:29:04 - root - WARNING - No valid vectors found for sentence: userevlekis
+2025-07-19 17:29:05 - root - WARNING - No valid vectors found for sentence: sxual
+2025-07-19 17:29:06 - root - WARNING - No valid vectors found for sentence: queeeeeeeeeeers freeeaaaks
+2025-07-19 17:29:14 - root - WARNING - No valid vectors found for sentence: ndy
+2025-07-19 17:29:14 - root - WARNING - No valid vectors found for sentence: spyderboi
+2025-07-19 17:29:14 - root - WARNING - No valid vectors found for sentence: yeassssssss
+2025-07-19 17:29:15 - root - WARNING - No valid vectors found for sentence: bernarda fibrotic
+2025-07-19 17:29:15 - root - WARNING - No valid vectors found for sentence: niiicce
+2025-07-19 17:29:16 - root - WARNING - No valid vectors found for sentence: friendszxc
+2025-07-19 17:29:20 - root - WARNING - No valid vectors found for sentence: mikexx mikexx
+2025-07-19 17:29:20 - root - WARNING - No valid vectors found for sentence: chatterbox
+2025-07-19 17:29:21 - root - WARNING - No valid vectors found for sentence: narwhal
+2025-07-19 17:29:23 - root - WARNING - No valid vectors found for sentence: ravnaaaaj
+2025-07-19 17:29:26 - root - WARNING - No valid vectors found for sentence: codehpro
+2025-07-19 17:29:26 - root - WARNING - No valid vectors found for sentence: bolestniki
+2025-07-19 17:29:26 - root - WARNING - No valid vectors found for sentence: govna
+2025-07-19 17:29:29 - root - WARNING - No valid vectors found for sentence: izigravaj dobrotvora
+2025-07-19 17:29:29 - root - WARNING - No valid vectors found for sentence: tdt
+2025-07-19 17:29:33 - root - WARNING - No valid vectors found for sentence: splicani odignorirali
+2025-07-19 17:29:35 - root - WARNING - No valid vectors found for sentence: yeppppppppppppppppppp
+2025-07-19 17:29:37 - root - WARNING - No valid vectors found for sentence: politifuldm
+2025-07-19 17:29:38 - root - WARNING - No valid vectors found for sentence: hhhahahaahahah
+2025-07-19 17:29:39 - root - WARNING - No valid vectors found for sentence: teriristima
+2025-07-19 17:29:40 - root - WARNING - No valid vectors found for sentence: timmeh
+2025-07-19 17:29:45 - root - WARNING - No valid vectors found for sentence: knowwwwwww
+2025-07-19 17:29:46 - root - WARNING - No valid vectors found for sentence: hahahahahhahau
+2025-07-19 17:29:48 - root - WARNING - No valid vectors found for sentence: haaaaaaaaaaahaaaaaaaaaaaaahaaaaaaaaaaaaaaaaa
+2025-07-19 17:29:51 - root - WARNING - No valid vectors found for sentence: stephanieeeeey
+2025-07-19 17:29:52 - root - WARNING - No valid vectors found for sentence: mrn
+2025-07-19 17:29:53 - root - WARNING - No valid vectors found for sentence: bfg
+2025-07-19 17:29:54 - root - WARNING - No valid vectors found for sentence: usdt
+2025-07-19 17:30:10 - root - WARNING - No valid vectors found for sentence: roxbury
+2025-07-19 17:30:11 - root - WARNING - No valid vectors found for sentence: viscotoxin
+2025-07-19 17:30:12 - root - WARNING - No valid vectors found for sentence: damir vladek
+2025-07-19 17:30:15 - root - WARNING - No valid vectors found for sentence: siiiiiiigh
+2025-07-19 17:30:17 - root - WARNING - No valid vectors found for sentence: askhermore
+2025-07-19 17:30:17 - root - WARNING - No valid vectors found for sentence: pffffft
+2025-07-19 17:30:23 - root - WARNING - No valid vectors found for sentence: shitttt
+2025-07-19 17:30:26 - root - WARNING - No valid vectors found for sentence: aragorn
+2025-07-19 17:30:28 - root - WARNING - No valid vectors found for sentence: keokuk
+2025-07-19 17:30:34 - root - WARNING - No valid vectors found for sentence: anotherwomanwedding bridgetown
+2025-07-19 17:30:34 - root - WARNING - No valid vectors found for sentence: nooooooo
+2025-07-19 17:30:37 - root - WARNING - No valid vectors found for sentence: tylertyler
+2025-07-19 17:30:37 - root - WARNING - No valid vectors found for sentence: iiiiiii
+2025-07-19 17:30:38 - root - WARNING - No valid vectors found for sentence: smjer siptarologija
+2025-07-19 17:30:38 - root - WARNING - No valid vectors found for sentence: fuckkkkkkkkk
+2025-07-19 17:30:41 - root - WARNING - No valid vectors found for sentence: fuckkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+2025-07-19 17:30:41 - root - WARNING - No valid vectors found for sentence: poturak
+2025-07-19 17:30:45 - root - WARNING - No valid vectors found for sentence: hititonthehead
+2025-07-19 17:30:50 - root - WARNING - No valid vectors found for sentence: grosssssss
+2025-07-19 17:30:50 - root - WARNING - No valid vectors found for sentence: ewwwwwweyy
+2025-07-19 17:30:54 - root - WARNING - No valid vectors found for sentence: definantly
+2025-07-19 17:30:54 - root - WARNING - No valid vectors found for sentence: greggsss terrrrrrrribbbbble
+2025-07-19 17:30:56 - root - WARNING - No valid vectors found for sentence: kunchung
+2025-07-19 17:31:03 - root - WARNING - No valid vectors found for sentence: afdc
+2025-07-19 17:31:03 - root - WARNING - No valid vectors found for sentence: suppoing charitytuesday
+2025-07-19 17:31:04 - root - WARNING - No valid vectors found for sentence: damir omerbegovic
+2025-07-19 17:31:04 - root - WARNING - No valid vectors found for sentence: jeeeeeewwwwwwwwssssss cunnnnnnnnnnnnnnnttttttttttttts
+2025-07-19 17:31:04 - root - WARNING - No valid vectors found for sentence: hahahhahaah
+2025-07-19 17:31:06 - root - WARNING - No valid vectors found for sentence: foundationstaers
+2025-07-19 17:31:08 - root - WARNING - No valid vectors found for sentence: heatsketch
+2025-07-19 17:31:09 - root - WARNING - No valid vectors found for sentence: groteskno
+2025-07-19 17:31:12 - root - WARNING - No valid vectors found for sentence: dfujioladfshjiofdyy
+2025-07-19 17:31:12 - root - WARNING - No valid vectors found for sentence: nordenwulf
+2025-07-19 17:31:12 - root - WARNING - No valid vectors found for sentence: purgeri hahahahahaahahahahahahaahahahahaa
+2025-07-19 17:31:18 - root - WARNING - No valid vectors found for sentence: sdlam
+2025-07-19 17:31:18 - root - WARNING - No valid vectors found for sentence: iiiiiiiiiihhhaaaaaaaa
+2025-07-19 17:31:19 - root - WARNING - No valid vectors found for sentence: sotone
+2025-07-19 17:31:20 - root - WARNING - No valid vectors found for sentence: glupan
+2025-07-19 17:31:23 - root - WARNING - No valid vectors found for sentence: yesssss
+2025-07-19 17:31:23 - root - WARNING - No valid vectors found for sentence: ergdjkllfdsasdfjkl kjfdsatalk
+2025-07-19 17:31:24 - root - WARNING - No valid vectors found for sentence: shenandoah shenandoah
+2025-07-19 17:31:28 - root - WARNING - No valid vectors found for sentence: usaskih
+2025-07-19 17:31:29 - root - WARNING - No valid vectors found for sentence: hubie mcdonough
+2025-07-19 17:31:30 - root - WARNING - No valid vectors found for sentence: rajo
+2025-07-19 17:31:31 - root - WARNING - No valid vectors found for sentence: uzizbjeglice
+2025-07-19 17:31:31 - root - WARNING - No valid vectors found for sentence: somethina
+2025-07-19 17:31:35 - root - WARNING - No valid vectors found for sentence: notyourshield
+2025-07-19 17:31:35 - root - WARNING - No valid vectors found for sentence: userwikiplayer wikiplayer
+2025-07-19 17:31:36 - root - WARNING - No valid vectors found for sentence: bahahaha
+2025-07-19 17:31:42 - root - WARNING - No valid vectors found for sentence: ajmoooo
+2025-07-19 17:31:42 - root - WARNING - No valid vectors found for sentence: sloboda neistomisljenika
+2025-07-19 17:31:43 - root - WARNING - No valid vectors found for sentence: oditeeee domaaaaaaaaa
+2025-07-19 17:31:45 - root - WARNING - No valid vectors found for sentence: lud nenormalan bunsen
+2025-07-19 17:31:46 - root - WARNING - No valid vectors found for sentence: heyyyyyyyy wats
+2025-07-19 17:31:47 - root - WARNING - No valid vectors found for sentence: nigor
+2025-07-19 17:31:47 - root - WARNING - No valid vectors found for sentence: larch
+2025-07-19 17:31:50 - root - WARNING - No valid vectors found for sentence: bigdt
+2025-07-19 17:31:55 - root - WARNING - No valid vectors found for sentence: homosapiens hetrosapiens
+2025-07-19 17:31:55 - root - WARNING - No valid vectors found for sentence: deeriiiiiii
+2025-07-19 17:31:56 - root - WARNING - No valid vectors found for sentence: jettamann
+2025-07-19 17:32:02 - root - WARNING - No valid vectors found for sentence: nly
+2025-07-19 17:32:05 - root - WARNING - No valid vectors found for sentence: hillelfrei
+2025-07-19 17:32:08 - root - WARNING - No valid vectors found for sentence: whiteutopian
+2025-07-19 17:32:10 - root - WARNING - No valid vectors found for sentence: subban
+2025-07-19 17:32:14 - root - WARNING - No valid vectors found for sentence: wrs
+2025-07-19 17:32:17 - root - WARNING - No valid vectors found for sentence: sweeeeeeeeeeeeeeeeet
+2025-07-19 17:32:20 - root - WARNING - No valid vectors found for sentence: katastrof
+2025-07-19 17:32:22 - root - WARNING - No valid vectors found for sentence: ahahahahahahaa
+2025-07-19 17:32:27 - root - WARNING - No valid vectors found for sentence: zdrowie
+2025-07-19 17:32:27 - root - WARNING - No valid vectors found for sentence: coooooool
+2025-07-19 17:32:30 - root - WARNING - No valid vectors found for sentence: siiiiigh
+2025-07-19 17:32:30 - root - WARNING - No valid vectors found for sentence: uhmmm
+2025-07-19 17:32:31 - root - WARNING - No valid vectors found for sentence: wptldnr
+2025-07-19 17:32:32 - root - WARNING - No valid vectors found for sentence: talkbattle mullaitivu
+2025-07-19 17:32:33 - root - WARNING - No valid vectors found for sentence: sretno
+2025-07-19 17:32:34 - root - WARNING - No valid vectors found for sentence: golitsyin alexandros moiseyev stanchion
+2025-07-19 17:32:36 - root - WARNING - No valid vectors found for sentence: asperchu apercu
+2025-07-19 17:32:38 - root - WARNING - No valid vectors found for sentence: okayyyyyy
+2025-07-19 17:32:40 - root - WARNING - No valid vectors found for sentence: glupost
+2025-07-19 17:32:42 - root - INFO - Train vectors shape: (352719, 100)
+2025-07-19 17:32:42 - root - INFO - Test vectors shape: (88180, 100)
+2025-07-19 17:32:42 - root - INFO - Saving vectorized arrays to disk...
+2025-07-19 17:32:43 - root - INFO - Numpy array saved successfully at: Artifacts\data_vectorization\train.npy
+2025-07-19 17:32:43 - root - INFO - Numpy array saved successfully at: Artifacts\data_vectorization\test.npy
+2025-07-19 17:32:43 - root - INFO - Data vectorization complete.
+2025-07-19 17:32:43 - root - INFO - \u2705 Vectorization completed.
+2025-07-19 17:32:43 - root - INFO - \U0001f4e6 Train vectors path: Artifacts\data_vectorization\train.npy
+2025-07-19 17:32:43 - root - INFO - \U0001f4e6 Test vectors path: Artifacts\data_vectorization\test.npy
+2025-07-19 17:32:43 - root - INFO - \U0001f3cb\ufe0f\u200d\u2642\ufe0f Starting model training...
+2025-07-19 17:32:43 - root - INFO - Loading vectorized training and test data...
+2025-07-19 17:32:43 - root - INFO - Numpy array loaded successfully from: Artifacts\data_vectorization\train.npy
+2025-07-19 17:32:43 - root - INFO - Numpy array loaded successfully from: Artifacts\data_vectorization\test.npy
+2025-07-19 17:32:43 - root - INFO - Training XGBoost classifier...
+2025-07-19 17:33:25 - root - INFO - Evaluating model...
+2025-07-19 17:33:25 - root - INFO - Model evaluation complete: Accuracy=0.8390, Precision=0.8744, Recall=0.8390, F1=0.8501
+2025-07-19 17:33:25 - root - INFO - Object saved successfully at: model\model.pkl
+2025-07-19 17:33:25 - root - INFO - Model saved at model\model.pkl
+2025-07-19 17:33:25 - root - INFO - \u2705 Model training completed.
+2025-07-19 17:33:25 - root - INFO - \U0001f5c3\ufe0f Model saved at: model\model.pkl
+2025-07-19 17:33:25 - root - INFO - \U0001f4ca Model Metrics: Precision=0.8744, Recall=0.8390, Accuracy=0.8390, F1 Score=0.8501
